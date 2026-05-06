@@ -84,10 +84,13 @@ export default function Hero() {
       ))}
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center w-full min-h-screen px-6 mx-auto max-w-7xl md:block md:pt-24 md:pb-16">
+     <div className="relative z-10 flex flex-col items-center justify-center w-full min-h-screen px-6 pt-24 mx-auto max-w-7xl md:block md:pt-24 md:pb-16">
 
   <div className="max-w-4xl text-center md:text-left">
-   
+    
+    <div className="mb-6 section-label">
+      <span>Kujdes Profesional</span>
+    </div>
 
     <h1 className="mb-6 font-black leading-none font-orbitron">
       <div
