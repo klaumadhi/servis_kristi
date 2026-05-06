@@ -90,9 +90,9 @@ export default function Hero() {
     
     
 
-    <h1 className="justify-center mt-6 mb-6 font-black leading-none font-orbitron">
+    <h1 className="justify-center mt-6 mb-6 font-black leading-none sm:ml-10 font-orbitron">
       <div
-        className="text-5xl text-white md:text-7xl lg:text-8xl"
+        className="text-5xl text-white md:text-7xl lg:text-7xl"
         style={{ animation: 'fadeUp 0.8s ease 0.3s both' }}
       >
         {typed}
@@ -114,13 +114,13 @@ export default function Hero() {
           </p>
 
           <div
-            className="flex flex-wrap gap-3 mb-10"
+            className="flex flex-wrap gap-3 mb-10 xs:justify-center"
             style={{ animation: 'fadeUp 0.8s ease 0.8s both' }}
           >
             {[
               { icon: Zap, text: 'Diagnozë e shpejtë' },
               { icon: Settings, text: 'Pajisje moderne' },
-              { icon: MapPin, text: 'Vendndodhje në Durrës' },
+              { icon: MapPin, text: 'Vendndodhja Durrës' },
             ].map(({ icon: Icon, text }) => (
               <div
                 key={text}
@@ -173,7 +173,7 @@ export default function Hero() {
       {/* Scroll indicator */}
       <button
         onClick={() => document.querySelector('#sherbimet')?.scrollIntoView({ behavior: 'smooth' })}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--neon-cyan)] opacity-70 hover:opacity-100 transition-opacity"
+        className="relative  pt-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--neon-cyan)] opacity-70 hover:opacity-100 transition-opacity"
         style={{ animation: 'float 3s ease-in-out infinite' }}
       >
         <span className="text-xs tracking-widest font-orbitron">Shiko më shumë</span>
