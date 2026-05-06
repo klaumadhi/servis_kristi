@@ -42,7 +42,7 @@ export default function WhyUs() {
     <section id="pse-ne" ref={sectionRef} className="relative py-24 overflow-hidden">
       {/* Background image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        className="absolute inset-0 bg-fixed bg-center bg-cover"
         style={{
           backgroundImage: `url('https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=1920')`,
           filter: 'brightness(0.08) saturate(0.5)',
@@ -55,20 +55,20 @@ export default function WhyUs() {
       <div className="absolute top-1/4 -left-32 w-64 h-64 bg-[var(--neon-cyan)] rounded-full blur-[120px] opacity-5" />
       <div className="absolute bottom-1/4 -right-32 w-64 h-64 bg-[var(--neon-green)] rounded-full blur-[120px] opacity-5" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 px-6 mx-auto max-w-7xl">
+        <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Left */}
           <div>
-            <div className="section-label mb-4 reveal-left">Pse Servis Kristi?</div>
-            <h2 className="font-orbitron font-bold text-4xl md:text-5xl text-white leading-tight mb-6 reveal-left" style={{ transitionDelay: '100ms' }}>
+            <div className="mb-4 section-label reveal-left">Pse Servis Kristi?</div>
+            <h2 className="mb-6 text-4xl font-bold leading-tight text-white font-orbitron md:text-5xl reveal-left" style={{ transitionDelay: '100ms' }}>
               Besueshmëri.<br />
               <span className="neon-text">Cilësi.</span>{' '}
               <span className="neon-text-green">Teknologji.</span>
             </h2>
-            <p className="font-exo text-slate-400 text-base leading-relaxed mb-8 reveal-left" style={{ transitionDelay: '200ms' }}>
+            <p className="mb-8 text-base leading-relaxed font-exo text-slate-400 reveal-left" style={{ transitionDelay: '200ms' }}>
               Servis Kristi ofron shërbim premium me çmime të ndershme. Çdo makinë trajtohet me kujdesin që meriton — si e jona.
             </p>
-            <div className="neon-divider w-20 reveal-left" style={{ transitionDelay: '300ms' }} />
+            <div className="w-20 neon-divider reveal-left" style={{ transitionDelay: '300ms' }} />
           </div>
 
           {/* Right - Reasons Grid */}
@@ -78,15 +78,15 @@ export default function WhyUs() {
               return (
                 <div
                   key={r.title}
-                  className="cyber-card reveal-right flex items-start gap-5 p-5"
+                  className="flex items-start gap-5 p-5 cyber-card reveal-right"
                   style={{ transitionDelay: `${i * 120}ms` }}
                 >
-                  <div className="service-icon flex-shrink-0">
+                  <div className="flex-shrink-0 service-icon">
                     <Icon size={20} className="text-[var(--neon-cyan)]" />
                   </div>
                   <div>
-                    <h3 className="font-orbitron font-semibold text-white text-sm mb-1">{r.title}</h3>
-                    <p className="font-exo text-slate-500 text-xs leading-relaxed">{r.desc}</p>
+                    <h3 className="mb-1 text-sm font-semibold text-white font-orbitron">{r.title}</h3>
+                    <p className="text-xs leading-relaxed font-exo text-slate-500">{r.desc}</p>
                   </div>
                 </div>
               )

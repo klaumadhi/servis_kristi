@@ -6,26 +6,17 @@ const images = [
     src: 'https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=800',
     alt: 'Mekanik duke punuar',
   },
-  {
-    src: 'https://images.pexels.com/photos/1719648/pexels-photo-1719648.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Servis makine',
-  },
+  
   {
     src: 'https://images.pexels.com/photos/4112196/pexels-photo-4112196.jpeg?auto=compress&cs=tinysrgb&w=800',
     alt: 'Motorri i makinës',
   },
-  {
-    src: 'https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Diagnostikim kompjuterik',
-  },
+  
   {
     src: 'https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg?auto=compress&cs=tinysrgb&w=800',
     alt: 'Veglat e punës',
   },
-  {
-    src: 'https://images.pexels.com/photos/4116177/pexels-photo-4116177.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Frenat e makinës',
-  },
+  
   {
     src: 'https://images.pexels.com/photos/3807386/pexels-photo-3807386.jpeg?auto=compress&cs=tinysrgb&w=800',
     alt: 'Punëtor profesionist',
@@ -64,15 +55,15 @@ export default function Gallery() {
     <section id="galeria" ref={sectionRef} className="relative py-24 overflow-hidden" style={{ background: '#030712' }}>
       <div className="absolute inset-0 bg-grid opacity-30" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 px-6 mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-12 reveal">
-          <div className="section-label mb-4">Galeria</div>
-          <h2 className="font-orbitron font-bold text-4xl md:text-5xl text-white">
+          <div className="mb-4 section-label">Galeria</div>
+          <h2 className="text-4xl font-bold text-white font-orbitron md:text-5xl">
             Pamje nga{' '}
             <span className="neon-text">servisi ynë</span>
           </h2>
-          <div className="neon-divider w-24 mt-6" />
+          <div className="w-24 mt-6 neon-divider" />
         </div>
 
         {/* Desktop Grid */}
@@ -88,11 +79,11 @@ export default function Gallery() {
               <img
                 src={img.src}
                 alt={img.alt}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                 style={{ filter: 'brightness(0.7) saturate(0.8)' }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[rgba(3,7,18,0.8)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100">
                 <div className="w-10 h-10 border border-[var(--neon-cyan)] flex items-center justify-center">
                   <span className="text-[var(--neon-cyan)] text-xl">+</span>
                 </div>
@@ -109,7 +100,7 @@ export default function Gallery() {
             <img
               src={images[current].src}
               alt={images[current].alt}
-              className="w-full h-full object-cover transition-all duration-500"
+              className="object-cover w-full h-full transition-all duration-500"
               style={{ filter: 'brightness(0.7)' }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[rgba(3,7,18,0.8)] to-transparent" />
