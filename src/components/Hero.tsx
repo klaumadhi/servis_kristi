@@ -88,11 +88,9 @@ export default function Hero() {
 
   <div className="max-w-4xl text-center md:text-left">
     
-    <div className="mb-6 section-label">
-      <span>Kujdes Profesional</span>
-    </div>
+    
 
-    <h1 className="mb-6 font-black leading-none font-orbitron">
+    <h1 className="justify-center mt-6 mb-6 font-black leading-none font-orbitron">
       <div
         className="text-5xl text-white md:text-7xl lg:text-8xl"
         style={{ animation: 'fadeUp 0.8s ease 0.3s both' }}

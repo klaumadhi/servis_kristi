@@ -30,17 +30,17 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? 'bg-[rgba(3,7,18,0.95)] backdrop-blur-md border-b border-[rgba(0,229,255,0.1)] py-3'
-          : 'bg-transparent py-5'
+          : 'bg-transparent py-3'
       }`}
     >
-      <div className="flex items-center justify-between px-6 mx-auto max-w-7xl">
+      <div className="flex items-center justify-between max-w-6xl px-6 mx-auto">
         {/* Logo */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="flex items-center gap-3 group"
         >
           <div className="relative">
-            <img src="/logo.PNG" alt="Servis Kristi" className="object-contain w-16 h-14"  />
+            <img src="/logo.PNG" alt="Servis Kristi" className="object-contain w-14 h-15"  />
            
           </div>
           
