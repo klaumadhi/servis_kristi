@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import { ChevronDown, Calendar, Phone, Zap, Settings, MapPin } from 'lucide-react'
 
 const stats = [
-  { value: '10+', label: 'Vite Përvojë' },
-  { value: '1000+', label: 'Klientë të Kënaqur' },
+  { value: '12+', label: 'Vite Përvojë' },
+  { value: '5000+', label: 'Klientë të Kënaqur' },
   { value: '5000+', label: 'Makina të Riparuara' },
   { value: '100%', label: 'Përkushtim' },
 ]
@@ -89,16 +89,24 @@ export default function Hero() {
   <div className="max-w-4xl text-center md:text-left">
     
     
+<div className="flex justify-center mt-56 md:hidden">
+  <img
+    src="/logo.PNG"
+    alt="Logo"
+    className="w-40 h-auto animate-bounce-in"
+    style={{ animation: 'logoPop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both' }}
+  />
+</div>
 
-    <h1 className="justify-center mt-6 mb-6 font-black leading-none sm:ml-10 font-orbitron">
-      <div
-        className="text-5xl text-white md:text-7xl lg:text-7xl"
-        style={{ animation: 'fadeUp 0.8s ease 0.3s both' }}
-      >
-        {typed}
-        <span className="animate-pulse text-[var(--neon-cyan)]">_</span>
-      </div>
-    </h1>
+<h1 className="justify-center hidden mt-6 mb-6 font-black leading-none md:flex sm:ml-10 font-orbitron">
+  <div
+    className="text-5xl text-white md:text-7xl lg:text-7xl"
+    style={{ animation: 'fadeUp 0.8s ease 0.3s both' }}
+  >
+    {typed}
+    <span className="animate-pulse text-[var(--neon-cyan)]">_</span>
+  </div>
+</h1>
 
           {/* <p
             className="max-w-xl mb-3 text-lg leading-relaxed font-exo text-slate-300 md:text-xl"
@@ -107,14 +115,14 @@ export default function Hero() {
             Zgjidhje të plota për makinën tuaj.
           </p> */}
           <p
-            className="font-orbitron text-[var(--neon-cyan)] text-sm tracking-widest mb-10"
+            className="font-orbitron text-[var(--neon-cyan)] text-sm tracking-widest mb-10 pt-4 md:pt-0"
             style={{ animation: 'fadeUp 0.8s ease 0.7s both' }}
           >
             Çdo problem, tek ne ka zgjidhje.
           </p>
 
           <div
-            className="flex flex-wrap gap-3 mb-10 xs:justify-center"
+            className="flex flex-wrap hidden gap-3 mb-10 xs:justify-center md:flex"
             style={{ animation: 'fadeUp 0.8s ease 0.8s both' }}
           >
             {[

@@ -117,7 +117,7 @@ export default function Footer() {
       <div className="border-t border-[rgba(0,229,255,0.08)] py-4">
         <div className="flex flex-col items-center justify-between gap-2 px-6 mx-auto max-w-7xl sm:flex-row">
           <p className="text-xs font-exo text-slate-700">
-            © 2024 Servis Kristi. Të gjitha të drejtat të rezervuara.
+            © {new Date().getFullYear()} Servis Kristi. Të gjitha të drejtat të rezervuara.
           </p>
           <p className="font-orbitron text-[10px] text-slate-800 tracking-widest">
             DURRËS · SHQIPËRI

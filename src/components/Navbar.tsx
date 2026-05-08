@@ -40,7 +40,7 @@ export default function Navbar() {
           className="flex items-center gap-3 group"
         >
           <div className="relative">
-            <img src="/logo.PNG" alt="Servis Kristi" className="object-contain w-14 h-15"  />
+            <img src="/logo.PNG" alt="Servis Kristi" className="object-contain w-10 h-10"  />
            
           </div>
           
