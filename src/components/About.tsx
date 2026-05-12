@@ -115,9 +115,9 @@ export default function About() {
               </div>
               <a
                 href="tel:0677161524"
-                className="inline-flex items-center gap-2 cyber-btn-filled"
+                className="flex items-center justify-center cyber-btn-filled"
               >
-                📞 TELEFONONI: 067 716 1524
+                📞 TEL: 067 716 1524
               </a>
             </div>
           </div>

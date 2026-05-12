@@ -17,8 +17,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Na shkruani',
-    value: 'info@serviskristi.al',
-    href: 'mailto:info@serviskristi.al',
+    value: 'kristi06042000@icloud.com',
+    href: 'mailto:kristi06042000@icloud.com',
   },
   {
     icon: Clock,
@@ -29,8 +29,8 @@ const contactInfo = [
 ]
 
 const socials = [
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
+  { icon: Facebook, href: 'https://www.tiktok.com/@kristi.servis', label: 'Facebook' },
+  { icon: Instagram, href: 'https://www.instagram.com/kristi.servis/', label: 'Instagram' },
   { icon: MessageCircle, href: 'https://wa.me/355677161524', label: 'WhatsApp' },
 ]
 
@@ -70,17 +70,17 @@ export default function Contact() {
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[var(--neon-cyan)] rounded-full blur-[180px] opacity-[0.03]" />
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-[var(--neon-green)] rounded-full blur-[180px] opacity-[0.03]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 px-6 mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-16 reveal">
-          <div className="section-label mb-4">Kontakt</div>
-          <h2 className="font-orbitron font-bold text-4xl md:text-5xl text-white">
+          <div className="mb-4 section-label">Kontakt</div>
+          <h2 className="text-4xl font-bold text-white font-orbitron md:text-5xl">
             Na <span className="neon-text">kontaktoni</span>
           </h2>
-          <div className="neon-divider w-24 mt-6" />
+          <div className="w-24 mt-6 neon-divider" />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid gap-12 lg:grid-cols-2">
           {/* Left - Contact Info + Map */}
           <div className="space-y-4">
             {contactInfo.map((item, i) => {
@@ -88,15 +88,15 @@ export default function Contact() {
               const content = (
                 <div
                   key={item.label}
-                  className="cyber-card reveal-left flex items-center gap-4 p-5"
+                  className="flex items-center gap-4 p-5 cyber-card reveal-left"
                   style={{ transitionDelay: `${i * 100}ms` }}
                 >
-                  <div className="service-icon flex-shrink-0">
+                  <div className="flex-shrink-0 service-icon">
                     <Icon size={18} className="text-[var(--neon-cyan)]" />
                   </div>
                   <div>
                     <div className="font-orbitron text-[10px] text-slate-500 uppercase tracking-widest mb-1">{item.label}</div>
-                    <div className="font-exo text-white text-sm">{item.value}</div>
+                    <div className="text-sm text-white font-exo">{item.value}</div>
                   </div>
                 </div>
               )
@@ -124,7 +124,7 @@ export default function Contact() {
                 href="https://maps.google.com/?q=Rruga+Bajram+Tusha+14,+Durrës"
                 target="_blank"
                 rel="noreferrer"
-                className="cyber-btn-filled flex items-center justify-center gap-2 w-full mt-0 py-3 text-xs"
+                className="flex items-center justify-center w-full gap-2 py-3 mt-0 text-xs cyber-btn-filled"
                 style={{ clipPath: 'none' }}
               >
                 <MapPin size={14} />
@@ -134,11 +134,11 @@ export default function Contact() {
           </div>
 
           {/* Right - Form */}
-          <div className="cyber-card reveal-right p-8 relative" style={{ transitionDelay: '200ms' }}>
+          <div className="relative p-8 cyber-card reveal-right" style={{ transitionDelay: '200ms' }}>
             <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[var(--neon-cyan)]" />
             <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[var(--neon-cyan)]" />
 
-            <h3 className="font-orbitron font-bold text-white text-xl mb-6">
+            <h3 className="mb-6 text-xl font-bold text-white font-orbitron">
               Dërgo një kërkesë
             </h3>
 
@@ -157,7 +157,7 @@ export default function Contact() {
                     placeholder="Emri Mbiemri"
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="cyber-input w-full px-4 py-3 text-sm"
+                    className="w-full px-4 py-3 text-sm cyber-input"
                   />
                 </div>
                 <div>
@@ -167,7 +167,7 @@ export default function Contact() {
                     placeholder="06X XXX XXXX"
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                    className="cyber-input w-full px-4 py-3 text-sm"
+                    className="w-full px-4 py-3 text-sm cyber-input"
                   />
                 </div>
               </div>
@@ -179,7 +179,7 @@ export default function Contact() {
                   placeholder="p.sh. BMW, Mercedes, Toyota..."
                   value={form.car}
                   onChange={(e) => setForm({ ...form, car: e.target.value })}
-                  className="cyber-input w-full px-4 py-3 text-sm"
+                  className="w-full px-4 py-3 text-sm cyber-input"
                 />
               </div>
 
@@ -190,14 +190,14 @@ export default function Contact() {
                   placeholder="Përshkruani problemin ose shërbimin që dëshironi..."
                   value={form.problem}
                   onChange={(e) => setForm({ ...form, problem: e.target.value })}
-                  className="cyber-input w-full px-4 py-3 text-sm resize-none"
+                  className="w-full px-4 py-3 text-sm resize-none cyber-input"
                 />
               </div>
 
               <button
                 onClick={handleSubmit}
                 disabled={sending}
-                className="cyber-btn-filled w-full flex items-center justify-center gap-2 py-4 disabled:opacity-70"
+                className="flex items-center justify-center w-full gap-2 py-4 cyber-btn-filled disabled:opacity-70"
                 style={{ clipPath: 'none' }}
               >
                 {sending ? (
@@ -218,7 +218,7 @@ export default function Contact() {
 
         {/* Socials */}
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 reveal pt-8 border-t border-[rgba(0,229,255,0.1)]">
-          <div className="font-exo text-slate-500 text-sm">
+          <div className="text-sm font-exo text-slate-500">
             Ndiqni Servis Kristi në rrjetet sociale
           </div>
           <div className="flex gap-3">

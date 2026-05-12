@@ -7,10 +7,6 @@ const images = [
     alt: 'Mekanik duke punuar',
   },
   
-  {
-    src: 'https://images.pexels.com/photos/4112196/pexels-photo-4112196.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Motorri i makinës',
-  },
   
   {
     src: 'https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg?auto=compress&cs=tinysrgb&w=800',

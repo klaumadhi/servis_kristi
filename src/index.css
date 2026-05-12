@@ -341,13 +341,6 @@ body {
   animation: flowRight 2s linear infinite;
 }
 
-@keyframes logoPop {
-  0%   { opacity: 0; transform: scale(0.3) rotate(-10deg); }
-  60%  { opacity: 1; transform: scale(1.1) rotate(3deg); }
-  80%  { transform: scale(0.95) rotate(-2deg); }
-  100% { opacity: 1; transform: scale(1) rotate(0deg); }
-}
-
 @keyframes flowRight {
   0% { left: -100%; }
   100% { left: 100%; }
@@ -397,4 +390,46 @@ body {
 
 .cyber-input::placeholder {
   color: rgba(148, 163, 184, 0.5);
+}
+
+
+@keyframes flagFloat {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  25%  { transform: translateY(-8px) rotate(1.5deg); }
+  50%  { transform: translateY(-4px) rotate(-1deg); }
+  75%  { transform: translateY(-10px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes flagAppear {
+  0%   { opacity: 0; transform: translateY(20px) scale(0.85); }
+  100% { opacity: 1; transform: translateY(0px) scale(1); }
+}
+
+@keyframes flagFloat {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  25%  { transform: translateY(-8px) rotate(1.5deg); }
+  50%  { transform: translateY(-4px) rotate(-1deg); }
+  75%  { transform: translateY(-10px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes slideFromLeft {
+  0%   { opacity: 0; transform: translateX(-60px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideFromRight {
+  0%   { opacity: 0; transform: translateX(60px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeUpSlow {
+  0%   { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomFade {
+  0%   { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
 }

@@ -29,19 +29,20 @@ export default function Hero() {
 
   return (
     <section className="relative flex flex-col justify-center min-h-screen overflow-hidden">
+
       {/* Video Background */}
       <video
-  ref={videoRef}
-  autoPlay
-  muted
-  loop
-  playsInline
-  onLoadedData={() => setVideoLoaded(true)}
-  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
-  style={{ filter: 'brightness(0.35) saturate(0.8)' }}
->
-  <source src="/hero.mp4" type="video/mp4" />
-</video>
+        ref={videoRef}
+        autoPlay
+        muted
+        loop
+        playsInline
+        onLoadedData={() => setVideoLoaded(true)}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
+        style={{ filter: 'brightness(0.35) saturate(0.8)' }}
+      >
+        <source src="/hero.mp4" type="video/mp4" />
+      </video>
 
       {/* Fallback image — hidden once video loads */}
       <div
@@ -84,45 +85,43 @@ export default function Hero() {
       ))}
 
       {/* Content */}
-     <div className="relative z-10 flex flex-col items-center justify-center w-full min-h-screen px-6 pt-24 mx-auto max-w-7xl md:block md:pt-24 md:pb-16">
+      <div className="relative z-10 flex flex-col items-center justify-center w-full min-h-screen px-6 pt-24 mx-auto max-w-7xl md:block md:pt-24 md:pb-16">
+        <div className="max-w-4xl text-center md:text-left">
 
-  <div className="max-w-4xl text-center md:text-left">
-    
-    
-<div className="flex justify-center mt-56 md:hidden">
-  <img
-    src="/logo.PNG"
-    alt="Logo"
-    className="w-40 h-auto animate-bounce-in"
-    style={{ animation: 'logoPop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both' }}
-  />
-</div>
+          {/* Mobile logo — flag float animation */}
+          <div className="flex justify-center mt-56 md:hidden">
+            <img
+              src="/logo.PNG"
+              alt="Logo"
+              className="w-40 h-auto"
+              style={{
+                animation: 'flagAppear 1.2s ease 0.32s both, flagFloat 8s ease-in-out 1s infinite',
+              }}
+            />
+          </div>
 
-<h1 className="justify-center hidden mt-6 mb-6 font-black leading-none md:flex sm:ml-10 font-orbitron">
-  <div
-    className="text-5xl text-white md:text-7xl lg:text-7xl"
-    style={{ animation: 'fadeUp 0.8s ease 0.3s both' }}
-  >
-    {typed}
-    <span className="animate-pulse text-[var(--neon-cyan)]">_</span>
-  </div>
-</h1>
+          {/* Desktop heading — typewriter */}
+          <h1 className="justify-center hidden mt-6 mb-6 font-black leading-none md:flex sm:ml-10 font-orbitron">
+            <div
+              className="text-5xl text-white md:text-7xl lg:text-7xl"
+              style={{ animation: 'fadeUp 0.8s ease 0.3s both' }}
+            >
+              {typed}
+              <span className="animate-pulse text-[var(--neon-cyan)]">_</span>
+            </div>
+          </h1>
 
-          {/* <p
-            className="max-w-xl mb-3 text-lg leading-relaxed font-exo text-slate-300 md:text-xl"
-            style={{ animation: 'fadeUp 0.8s ease 0.6s both' }}
-          >
-            Zgjidhje të plota për makinën tuaj.
-          </p> */}
+          {/* Subtitle — slides from LEFT */}
           <p
             className="font-orbitron text-[var(--neon-cyan)] text-sm tracking-widest mb-10 pt-4 md:pt-0"
-            style={{ animation: 'fadeUp 0.8s ease 0.7s both' }}
+            style={{ animation: 'slideFromLeft 0.7s ease 1.8s both' }}
           >
             Çdo problem, tek ne ka zgjidhje.
           </p>
 
+          {/* Badges — desktop only, fade up */}
           <div
-            className="flex flex-wrap hidden gap-3 mb-10 xs:justify-center md:flex"
+            className="flex-wrap hidden gap-3 mb-10 xs:justify-center md:flex"
             style={{ animation: 'fadeUp 0.8s ease 0.8s both' }}
           >
             {[
@@ -140,9 +139,10 @@ export default function Hero() {
             ))}
           </div>
 
+          {/* CTA Buttons — slides from RIGHT */}
           <div
             className="flex flex-col gap-4 sm:flex-row"
-            style={{ animation: 'fadeUp 0.8s ease 1s both' }}
+            style={{ animation: 'slideFromRight 0.7s ease 2.1s both' }}
           >
             <button
               onClick={() => document.querySelector('#kontakt')?.scrollIntoView({ behavior: 'smooth' })}
@@ -161,15 +161,13 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Stats bar */}
-        <div
-          className="grid grid-cols-2 gap-4 mt-20 md:grid-cols-4"
-          style={{ animation: 'fadeUp 0.8s ease 1.2s both' }}
-        >
-          {stats.map((s) => (
+        {/* Stats — zoom fade with stagger */}
+        <div className="grid grid-cols-2 gap-4 mt-20 md:grid-cols-4">
+          {stats.map((s, i) => (
             <div
               key={s.label}
               className="relative p-5 text-center cyber-card corner-tl corner-br"
+              style={{ animation: `zoomFade 0.6s ease ${2.4 + i * 0.15}s both` }}
             >
               <div className="mb-1 text-2xl font-black stat-number md:text-3xl">{s.value}</div>
               <div className="text-xs tracking-widest uppercase font-exo text-slate-500">{s.label}</div>
@@ -187,6 +185,9 @@ export default function Hero() {
         <span className="text-xs tracking-widest font-orbitron">Shiko më shumë</span>
         <ChevronDown size={20} />
       </button>
+
+
+
     </section>
   )
 }
