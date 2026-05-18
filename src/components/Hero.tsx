@@ -236,12 +236,20 @@ export default function Hero() {
               style={{ animation: 'slideFromRight 0.7s ease 2.1s both' }}
             >
               <button
-                onClick={() => document.querySelector('#kontakt')?.scrollIntoView({ behavior: 'smooth' })}
-                className="flex items-center justify-center w-full gap-2 cyber-btn-filled"
-              >
-                <Calendar size={16} />
-                Rezervo Tani
-              </button>
+  onClick={() =>
+    window.open(
+      'https://wa.me/355677161524?text=' +
+        encodeURIComponent(
+          'Pershendetje, do doja te rezervoja per makinen time.'
+        ),
+      '_blank'
+    )
+  }
+  className="flex items-center justify-center w-full gap-2 cyber-btn-filled"
+>
+  <Calendar size={16} />
+  Rezervo Tani
+</button>
               <a
                 href="tel:0677161524"
                 className="flex items-center justify-center w-full gap-2 cyber-btn"
