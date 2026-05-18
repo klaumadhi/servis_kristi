@@ -13,12 +13,25 @@ const navLinks = [
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [inHero, setInHero] = useState(true)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  const onScroll = () => setScrolled(window.scrollY > 50)
+
+  // Listen for hero scroll progress event
+  const onHeroProgress = (e: Event) => {
+    const progress = (e as CustomEvent).detail as number
+    // Once hero scroll animation is done (progress = 1), show nav bg
+    setInHero(progress < 1)
+  }
+
+  window.addEventListener('scroll', onScroll)
+  window.addEventListener('heroScrollProgress', onHeroProgress)
+  return () => {
+    window.removeEventListener('scroll', onScroll)
+    window.removeEventListener('heroScrollProgress', onHeroProgress)
+  }
+}, [])
 
   const handleNav = (href: string) => {
     setOpen(false)
@@ -27,12 +40,12 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? 'bg-[rgba(3,7,18,0.95)] backdrop-blur-md border-b border-[rgba(0,229,255,0.1)] py-3'
-          : 'bg-transparent py-3'
-      }`}
-    >
+  className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    scrolled && !inHero
+      ? 'bg-[rgba(3,7,18,0.95)] backdrop-blur-md border-b border-[rgba(0,229,255,0.1)] py-3'
+      : 'bg-transparent py-5'
+  }`}
+>
       <div className="flex items-center justify-between max-w-6xl px-6 mx-auto">
         {/* Logo */}
         <button
