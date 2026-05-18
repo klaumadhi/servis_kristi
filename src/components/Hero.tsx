@@ -214,7 +214,7 @@ export default function Hero() {
               alt="Logo"
               className="h-auto w-28 opacity-90"
               style={{
-                animation: 'flagAppear 1.2s ease 2.9s both, flagFloat 8s ease-in-out 1s infinite',
+                animation: 'flagAppear 1.2s ease 0.9s both, flagFloat 8s ease-in-out 0.5s infinite',
               }}
             />
           </div>
