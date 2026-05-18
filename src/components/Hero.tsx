@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
-import { ChevronDown, Calendar, Phone, Zap, Settings, MapPin } from 'lucide-react'
+import { Calendar, Phone, Zap, Settings, MapPin } from 'lucide-react'
 
 const TOTAL_FRAMES = 240
 
