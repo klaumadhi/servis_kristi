@@ -115,15 +115,27 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-[rgba(0,229,255,0.08)] py-4">
-        <div className="flex flex-col items-center justify-between gap-2 px-6 mx-auto max-w-7xl sm:flex-row">
-          <p className="text-xs font-exo text-slate-700">
-            © {new Date().getFullYear()} Servis Kristi. Të gjitha të drejtat të rezervuara.
-          </p>
-          <p className="font-orbitron text-[10px] text-slate-800 tracking-widest">
-            DURRËS · SHQIPËRI
-          </p>
-        </div>
-      </div>
+  <div className="flex flex-col items-center justify-between gap-2 px-6 mx-auto max-w-7xl sm:flex-row">
+    
+    <p className="text-xs font-exo text-slate-700">
+      © {new Date().getFullYear()} Servis Kristi. Të gjitha të drejtat të rezervuara.
+    </p>
+
+    <a
+  href="https://klaurent-portfolio.netlify.app/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="relative z-10 text-[11px] tracking-wider transition-colors duration-300 font-orbitron text-cyan-500 hover:text-cyan-300"
+>
+  Ndërtuar nga K.M
+</a>
+
+    <p className="font-orbitron text-[10px] text-slate-800 tracking-widest">
+      DURRËS · SHQIPËRI
+    </p>
+    
+  </div>
+</div>
     </footer>
   )
 }

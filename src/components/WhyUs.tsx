@@ -44,7 +44,7 @@ export default function WhyUs() {
       <div
         className="absolute inset-0 bg-fixed bg-center bg-cover"
         style={{
-          backgroundImage: `url('https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=1920')`,
+         backgroundImage: `url('/image-inside/1.jpeg')`,
           filter: 'brightness(0.08) saturate(0.5)',
         }}
       />

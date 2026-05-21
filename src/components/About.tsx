@@ -73,7 +73,7 @@ export default function About() {
             <div className="relative">
               {/* Main image */}
               <img
-                src="https://images.pexels.com/photos/13065690/pexels-photo-13065690.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/image-inside/7.jpeg"
                 alt="Servis Kristi Team"
                 className="w-full object-cover border border-[rgba(0,229,255,0.2)]"
                 style={{ height: '480px', filter: 'brightness(0.8) saturate(0.8)' }}

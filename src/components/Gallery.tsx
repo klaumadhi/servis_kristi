@@ -3,22 +3,34 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 
 const images = [
   {
-    src: 'https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=800',
+    src: '/image-inside/1.jpeg',
     alt: 'Mekanik duke punuar',
   },
   
   
   {
-    src: 'https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg?auto=compress&cs=tinysrgb&w=800',
+    src: '/image-inside/2.jpeg',
     alt: 'Veglat e punës',
   },
   
   {
-    src: 'https://images.pexels.com/photos/3807386/pexels-photo-3807386.jpeg?auto=compress&cs=tinysrgb&w=800',
+    src: '/image-inside/3.jpeg',
     alt: 'Punëtor profesionist',
   },
   {
-    src: 'https://images.pexels.com/photos/13065690/pexels-photo-13065690.jpeg?auto=compress&cs=tinysrgb&w=800',
+    src: '/image-inside/4.jpeg',
+    alt: 'Sistemi elektrik',
+  },
+  {
+    src: '/image-inside/5.jpeg',
+    alt: 'Sistemi elektrik',
+  },
+  {
+    src: '/image-inside/6.jpeg',
+    alt: 'Sistemi elektrik',
+  },
+  {
+    src: '/image-inside/7.jpeg',
     alt: 'Sistemi elektrik',
   },
 ]

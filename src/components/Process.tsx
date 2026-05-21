@@ -114,7 +114,7 @@ export default function Process() {
           className="mt-20 reveal relative overflow-hidden rounded-none border border-[rgba(0,229,255,0.2)]"
           style={{ background: 'rgba(6, 15, 30, 0.9)' }}
         >
-          <div className="absolute inset-0 bg-center bg-cover opacity-10" style={{ backgroundImage: "url('https://images.pexels.com/photos/18395898/pexels-photo-18395898.jpeg?auto=compress&cs=tinysrgb&w=1920')" }} />
+          <div className="absolute inset-0 bg-center bg-cover opacity-10" style={{ backgroundImage: `url('/image-inside/6.jpeg')` }} />
           <div className="absolute top-0 left-0 w-24 h-24 border-t-2 border-l-2 border-[var(--neon-cyan)] opacity-40" />
           <div className="absolute bottom-0 right-0 w-24 h-24 border-b-2 border-r-2 border-[var(--neon-cyan)] opacity-40" />
 

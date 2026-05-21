@@ -1,5 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
+import emailjs from '@emailjs/browser'
 import { Phone, Mail, MapPin, Clock, Send, Facebook, Instagram, MessageCircle } from 'lucide-react'
+
+// 🔑 REPLACE THESE WITH YOUR REAL VALUES FROM EMAILJS
+const EMAILJS_SERVICE_ID = 'service_jeupy7d'
+const EMAILJS_TEMPLATE_ID = 'template_v7c7c55'
+const EMAILJS_PUBLIC_KEY = 'X2HHKnDKK3lUnIe3W'
 
 const contactInfo = [
   {
@@ -39,6 +45,7 @@ export default function Contact() {
   const [form, setForm] = useState({ name: '', phone: '', car: '', problem: '' })
   const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -51,22 +58,47 @@ export default function Contact() {
     return () => observer.disconnect()
   }, [])
 
-  const handleSubmit = (e: React.MouseEvent) => {
+  const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault()
+    setError(false)
+
+    // Basic validation
+    if (!form.name.trim() || !form.phone.trim()) {
+      setError(true)
+      return
+    }
+
     setSending(true)
-    setTimeout(() => {
-      setSending(false)
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          phone: form.phone,
+          car: form.car || 'E paspecifikuar',
+          message: form.problem || 'E paspecifikuar',
+          to_email: 'kristi06042000@icloud.com',
+        },
+        EMAILJS_PUBLIC_KEY
+      )
+
       setSent(true)
       setForm({ name: '', phone: '', car: '', problem: '' })
-      setTimeout(() => setSent(false), 4000)
-    }, 1500)
+      setTimeout(() => setSent(false), 5000)
+    } catch (err) {
+      console.error('EmailJS error:', err)
+      setError(true)
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
     <section id="kontakt" ref={sectionRef} className="relative py-24 overflow-hidden" style={{ background: '#030712' }}>
       <div className="absolute inset-0 bg-grid" />
 
-      {/* Glowing orbs */}
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[var(--neon-cyan)] rounded-full blur-[180px] opacity-[0.03]" />
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-[var(--neon-green)] rounded-full blur-[180px] opacity-[0.03]" />
 
@@ -81,7 +113,7 @@ export default function Contact() {
         </div>
 
         <div className="grid gap-12 lg:grid-cols-2">
-          {/* Left - Contact Info + Map */}
+          {/* Left */}
           <div className="space-y-4">
             {contactInfo.map((item, i) => {
               const Icon = item.icon
@@ -142,16 +174,28 @@ export default function Contact() {
               Dërgo një kërkesë
             </h3>
 
+            {/* Success message */}
             {sent && (
               <div className="mb-4 p-4 border border-[var(--neon-green)] bg-[rgba(0,255,157,0.05)] text-[var(--neon-green)] font-orbitron text-sm text-center">
                 ✓ Kërkesa u dërgua me sukses! Do t'ju kontaktojmë së shpejti.
               </div>
             )}
 
+            {/* Error message */}
+            {error && (
+              <div className="mb-4 p-4 border border-red-500 bg-[rgba(255,0,0,0.05)] text-red-400 font-orbitron text-sm text-center">
+                ✗ {!form.name.trim() || !form.phone.trim()
+                  ? 'Ju lutem plotësoni emrin dhe numrin e telefonit.'
+                  : 'Ndodhi një gabim. Provoni përsëri ose na telefononi.'}
+              </div>
+            )}
+
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="font-orbitron text-[10px] text-slate-500 uppercase tracking-widest block mb-2">Emri juaj</label>
+                  <label className="font-orbitron text-[10px] text-slate-500 uppercase tracking-widest block mb-2">
+                    Emri juaj <span className="text-red-400">*</span>
+                  </label>
                   <input
                     type="text"
                     placeholder="Emri Mbiemri"
@@ -161,7 +205,9 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label className="font-orbitron text-[10px] text-slate-500 uppercase tracking-widest block mb-2">Nr. i telefonit</label>
+                  <label className="font-orbitron text-[10px] text-slate-500 uppercase tracking-widest block mb-2">
+                    Nr. i telefonit <span className="text-red-400">*</span>
+                  </label>
                   <input
                     type="tel"
                     placeholder="06X XXX XXXX"
@@ -212,6 +258,13 @@ export default function Contact() {
                   </>
                 )}
               </button>
+
+              <p className="text-xs text-center font-exo text-slate-600">
+                Ose na telefononi direkt:{' '}
+                <a href="tel:0677161524" className="text-[var(--neon-cyan)] hover:underline">
+                  067 716 1524
+                </a>
+              </p>
             </div>
           </div>
         </div>
