@@ -15,13 +15,11 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [inHero, setInHero] = useState(true)
 
-  useEffect(() => {
+useEffect(() => {
   const onScroll = () => setScrolled(window.scrollY > 50)
 
-  // Listen for hero scroll progress event
   const onHeroProgress = (e: Event) => {
     const progress = (e as CustomEvent).detail as number
-    // Once hero scroll animation is done (progress = 1), show nav bg
     setInHero(progress < 1)
   }
 
@@ -39,11 +37,13 @@ export default function Navbar() {
   }
 
   return (
-    <nav
+  <nav
   className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-    scrolled && !inHero
-      ? 'bg-[rgba(3,7,18,0.95)] backdrop-blur-md border-b border-[rgba(0,229,255,0.1)] py-3'
-      : 'bg-transparent py-5'
+    inHero
+      ? 'opacity-0 pointer-events-none -translate-y-full md:opacity-100 md:pointer-events-auto md:translate-y-0 md:mt-5'
+      : scrolled
+        ? 'opacity-100 pointer-events-auto translate-y-0 bg-[rgba(3,7,18,0.95)] backdrop-blur-md border-b border-[rgba(0,229,255,0.1)] py-3'
+        : 'opacity-100 pointer-events-auto translate-y-0 bg-transparent py-5'
   }`}
 >
       <div className="flex items-center justify-between max-w-6xl px-6 mx-auto">

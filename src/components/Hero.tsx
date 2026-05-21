@@ -186,8 +186,8 @@ export default function Hero() {
         </div>
 
         {/* Corner Decorations */}
-        <div className="absolute top-24 left-6 w-16 h-16 border-l-2 border-t-2 border-[var(--neon-cyan)] opacity-40" />
-        <div className="absolute top-24 right-6 w-16 h-16 border-r-2 border-t-2 border-[var(--neon-cyan)] opacity-40" />
+        <div className="absolute md:top-24 left-6 w-16 h-16 border-l-2 border-t-2 border-[var(--neon-cyan)] opacity-40 top-10" />
+        <div className="absolute md:top-24 right-6 w-16 h-16 border-r-2 border-t-2 border-[var(--neon-cyan)] opacity-40 top-10" />
         <div className="hidden md:block absolute bottom-1 left-6 w-16 h-16 border-l-2 border-b-2 border-[var(--neon-cyan)] opacity-40" />
 <div className="hidden md:block absolute bottom-1 right-6 w-16 h-16 border-r-2 border-b-2 border-[var(--neon-cyan)] opacity-40" />
 
@@ -208,11 +208,11 @@ export default function Hero() {
         <div className="absolute inset-0 z-10 flex flex-col px-6 md:hidden">
 
           {/* Logo — top, small */}
-          <div className="flex justify-center pt-24">
+          <div className="flex justify-center pt-14">
             <img
               src="/logo.PNG"
               alt="Logo"
-              className="h-auto w-28 opacity-90"
+              className="w-40 h-auto opacity-90"
               style={{
                 animation: 'flagAppear 1.2s ease 0.9s both, flagFloat 8s ease-in-out 0.5s infinite',
               }}
