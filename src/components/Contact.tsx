@@ -18,7 +18,7 @@ const contactInfo = [
     icon: MapPin,
     label: 'Na gjeni këtu',
     value: 'Rruga Bajram Tusha 14, Durrës',
-    href: 'https://maps.google.com/?q=Rruga+Bajram+Tusha+14,+Durrës',
+    href: 'https://www.google.com/maps/place/Autoservis+Kristi+Shkozet/@41.3196407,19.4740744,21z/data=!4m9!1m2!2m1!1sservis+krist+ishkozet%5C!3m5!1s0x134fd96c7810be4d:0xf50d5ecb0c876b11!8m2!3d41.3196028!4d19.474308!16s%2Fg%2F11njtwnzrb?entry=ttu&g_ep=EgoyMDI2MDUyNS4wIKXMDSoASAFQAw%3D%3D',
   },
   {
     icon: Mail,
